@@ -11,16 +11,22 @@ public class App {
 		System.out.println("Can you build figure form sides?");
 		Integer[] param = Arrays.stream(args).map(Integer::valueOf).toArray(Integer[]::new);
 
-		initializeAllClasses().forEach(x -> {
-			if (x.canBeCrete(param)) {
-				elements.getAndIncrement();
-				System.out.println("Can create figure : " + x.getName());
-			}
-		});
+		if ( param.length < 3 || param.length > 4 ) {
+			initializeAllClasses().forEach(x -> {
+				if (x.canBeCrete(param)) {
+					elements.getAndIncrement();
+					System.out.println("Can create figure : " + x.getName());
+				}
+			});
 
-		if(elements.get() == 0) {
-			System.out.println("Can not create figure ");
+			if(elements.get() == 0) {
+				System.out.println("Can not create figure ");
+			}
+		} else {
+			System.out.println("Input must be 3 or 4 length");
 		}
+
+
 	}
 
 }
