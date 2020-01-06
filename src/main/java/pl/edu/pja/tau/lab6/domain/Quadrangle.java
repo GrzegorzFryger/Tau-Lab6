@@ -3,12 +3,11 @@ package pl.edu.pja.tau.lab6.domain;
 import pl.edu.pja.tau.lab6.Figure;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
-public class EquilateralTriangle extends Triangle implements Figure {
+public class Quadrangle implements Figure {
 	private String name;
 
-	public EquilateralTriangle() {
+	public Quadrangle() {
 		this.name = this.getClass().getName();
 	}
 
@@ -17,17 +16,12 @@ public class EquilateralTriangle extends Triangle implements Figure {
 	}
 
 	public Boolean canBeCrete(Integer[] sides) {
-		if (super.canBeCrete(sides)) {
-			return Arrays.stream(sides).allMatch(sides[0]::equals);
-		} else {
-			return false;
-		}
-
+		return sides.length == 4;
 	}
 
 	@Override
 	public String toString() {
-		return "EquilateralTriangle{" +
+		return "Quadrangle{" +
 				"name='" + name + '\'' +
 				'}';
 	}

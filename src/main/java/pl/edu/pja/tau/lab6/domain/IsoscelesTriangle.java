@@ -4,19 +4,23 @@ import pl.edu.pja.tau.lab6.Figure;
 
 import java.util.Arrays;
 
-public class IsoscelesTriangle implements Figure {
+public class IsoscelesTriangle extends Triangle implements Figure {
 	private String name;
 
 	public IsoscelesTriangle() {
 		this.name = this.getClass().getName();
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	public Boolean canBeCrete(Integer[] sides) {
-		if(sides.length < 3 || sides.length > 3 ) {
-			return false;
-		} else {
+		if (super.canBeCrete(sides)) {
 			return Arrays.stream(sides).allMatch(sides[0]::equals) ||
-					Arrays.stream(sides).anyMatch(x -> Arrays.asList(sides).contains(x)) ;
+					Arrays.stream(sides).anyMatch(x -> Arrays.asList(sides).contains(x));
+		} else {
+			return false;
 		}
 	}
 

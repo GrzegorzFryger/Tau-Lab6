@@ -4,7 +4,7 @@ import pl.edu.pja.tau.lab6.Figure;
 
 import java.util.Arrays;
 
-public class Square implements Figure {
+public class Square extends Quadrangle implements Figure {
 
 	private String name;
 
@@ -12,11 +12,15 @@ public class Square implements Figure {
 		this.name = this.getClass().getName();
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	public Boolean canBeCrete(Integer[] sides) {
-		if(sides.length < 4 || sides.length > 4 ) {
-			return false;
-		} else {
+		if (super.canBeCrete(sides)) {
 			return Arrays.stream(sides).allMatch(sides[0]::equals);
+		} else {
+			return false;
 		}
 
 	}
