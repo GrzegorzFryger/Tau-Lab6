@@ -23,6 +23,11 @@
             <artifactId>robotframework</artifactId>
             <version>3.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.robotframework</groupId>
+            <artifactId>robotframework-maven-plugin</artifactId>
+            <version>1.5.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -40,6 +45,18 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.robotframework</groupId>
+                <artifactId>robotframework-maven-plugin</artifactId>
+                <version>1.5.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -12,13 +12,13 @@ public class Main {
             try {
                 Integer.parseInt(arg);
             } catch (NumberFormatException ex) {
-                System.out.println("Błędne dane wejściowe");
+                System.out.println("Bledne dane wejsciowe");
             }
         }
         if (args.length == 3 || args.length == 4) {
             if (args.length == 3) {
                 if (isPossibleToBuildTriangle(args)) {
-                    System.out.println("Można zbudować trójkąt");
+                    System.out.println("Mozna zbudowac trojkat");
                 } else {
                     System.out.println("nierozpoznano");
                 }
@@ -29,7 +29,7 @@ public class Main {
                 }
             }
         } else {
-            System.out.println("Błędna ilość parametrów");
+            System.out.println("Bledna ilosc parametrow");
         }
 
     }
@@ -54,7 +54,7 @@ public class Main {
                 integers.get(1).equals(integers.get(3));
 
         if (firstSame && secondSame) {
-            System.out.println("Można zbudować prostokąt");
+            System.out.println("Mozna zbudowac prostokat");
         }
         return firstSame && secondSame;
     }
@@ -68,7 +68,7 @@ public class Main {
                 }
             }
         }
-        System.out.println("Można zbudować kwadrat");
+        System.out.println("Mozna zbudowac kwadrat");
         return true;
     }
 
