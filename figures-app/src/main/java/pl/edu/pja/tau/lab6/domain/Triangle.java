@@ -7,7 +7,7 @@ public class Triangle implements Figure {
 	private String name;
 
 	public Triangle() {
-		this.name = this.getClass().getName();
+		this.name =  this.getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
 	}
 
 	public String getName() {

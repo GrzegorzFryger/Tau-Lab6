@@ -9,7 +9,8 @@ public class Square extends Quadrangle implements Figure {
 	private String name;
 
 	public Square() {
-		this.name = this.getClass().getName();
+
+		this.name =  this.getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
 	}
 
 	public String getName() {

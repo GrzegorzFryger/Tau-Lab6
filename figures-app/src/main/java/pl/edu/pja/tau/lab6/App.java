@@ -11,7 +11,9 @@ public class App {
 		System.out.println("Can you build figure form sides?");
 		Integer[] param = Arrays.stream(args).map(Integer::valueOf).toArray(Integer[]::new);
 
-		if ( param.length < 3 || param.length > 4 ) {
+		if ( param.length  == 3 || param.length == 4 ) {
+
+
 			initializeAllClasses().forEach(x -> {
 				if (x.canBeCrete(param)) {
 					elements.getAndIncrement();

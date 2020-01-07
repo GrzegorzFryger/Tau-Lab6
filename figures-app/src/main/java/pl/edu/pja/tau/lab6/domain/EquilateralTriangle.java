@@ -9,7 +9,7 @@ public class EquilateralTriangle extends Triangle implements Figure {
 	private String name;
 
 	public EquilateralTriangle() {
-		this.name = this.getClass().getName();
+		this.name =  this.getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
 	}
 
 	public String getName() {
