@@ -1,6 +1,6 @@
 # Tau-Lab6
 
-##How to run
+## How to run
 
 First step you need to compile solution:
 
