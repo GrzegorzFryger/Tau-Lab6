@@ -1,19 +1,19 @@
 *** Test Cases ***
-Should detect a triangle when 3 sides are equal
-    ${result} =  Run Java Class With Args  ${mainClass}   3 3 3
+Should detect a triangle when 3 sides are given
+    ${result} =  Run Java Class With Args  ${mainClass}   3 4 3
     Should be equal as strings     ${result.replace("\n", " ")}   Mozna zbudowac trojkat
 
 Should detect a equilateral triangle when all sides are equals
     ${result} =  Run Java Class With Args  ${mainClass}   3 3 3
-    Should be equal as strings    ${result.replace("\n", " ")}   Mozna zbudowac trojkat rownoboczny
+    Should match    ${result.replace("\n", " ")}   Mozna zbudowac trojkat rownoboczny
 
 Should detect a triangle when 2 sides are equals
     ${result} =  Run Java Class With Args  ${mainClass}   2 2 3
-    Should be equal as strings     ${result.replace("\n", " ")}   Mozna zbudowac trojkat
+    Should match    ${result.replace("\n", " ")}   Mozna zbudowac trojkat
 
 Should detect a isosceles triangle when 2 sides are equals
     ${result} =  Run Java Class With Args  ${mainClass}   2 2 3
-    Should be equal as strings    ${result.replace("\n", " ")}   Mozna zbudowac prostokat rownoramienny
+    Should match    ${result.replace("\n", " ")}   Mozna zbudowac prostokat rownoramienny
 
 Should not detect a triangle when 3 sides are smaller than 3
     ${result} =  Run Java Class With Args  ${mainClass}   1 2 3
@@ -23,11 +23,11 @@ Should detect a square and renctangle when 4 sides are equals
     ${result} =  Run Java Class With Args  ${mainClass}   2 2 2 2
     Should be equal as strings     ${result.replace("\n", " ")}   Mozna zbudowac prostokat Mozna zbudowac kwadrat
 
-Should detect a rectangle when 2 sides are equals
+Should detect a rectangle when 2 pairs sides are equals
     ${result} =  Run Java Class With Args  ${mainClass}   2 2 4 4
     Should be equal as strings     ${result.replace("\n", " ")}   Mozna zbudowac prostokat
 
-Should detect a quadrangle when all sides are diffrent
+Should detect a quadrangle when all 4 sides are diffrent
     ${result} =  Run Java Class With Args  ${mainClass}   3 2 3 4
     Should be equal as strings    ${result.replace("\n", " ")}   Mozna zbudowac czworkat
 
